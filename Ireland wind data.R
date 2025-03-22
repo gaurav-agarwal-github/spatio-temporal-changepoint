@@ -11,7 +11,8 @@ stationdetails$name
 temp = list.files(path="/home/agarwalg/Ireland Wind Data", pattern="*csv",full.names = T); temp = temp[-23]
 myfiles = lapply(temp, read.csv, header=T, skip = 24, 
                  colClasses = c("character", rep("NULL", 9), "numeric",rep("NULL", 13) ))
-stationcodes = as.numeric(substr(temp, 37, 40))
+stationcodes = c(1075, 1375, 1475, 1575, 1775, 1875, 1975, 2075, 2175, 2275, 2375, 275, 3723,
+375, 3904, 4935, 518, 532, 575, 675, 775, 875)
 stations = stationdetails[stationdetails$station.name %in% stationcodes, ]
 sort(stations$station.name)
 
