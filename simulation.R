@@ -278,10 +278,10 @@ logL_markov_mean = function(par, Z,sl,tl, k, hypo){
   a = mya; alpha = myalpha; beta = mybeta
   sigma= 1; delta = mydelta; c1=c2 =c; nu=0.5
   
-  if(hypo==0){
-    museg1= museg2 = par[1]; c = par[2]
+    if(hypo==0){
+    museg1= museg2 = par[1]; c1=c2 =c = par[2]
   } else if (hypo==1){
-    museg1 = par[1]; museg2 = par[2];c = par[3]
+    museg1 = par[1]; museg2 = par[2];c1=c2 =c = par[3]
   }
   mu = ifelse(tseq>k,museg2, museg1)
   #mu=0
